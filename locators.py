@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class Header:
-    login_button = (By.XPATH, "//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg']")
+    login_button = (By.XPATH, "//button[normalize-space()='Войти в аккаунт']")
     # Кнопка "Войти в аккаунт" на главной странице
 
     My_account  = (By.XPATH, "//p[normalize-space()='Личный Кабинет']")
@@ -20,10 +20,10 @@ class Header:
     title_form = (By.XPATH, "//h2[normalize-space()='Вход']")  
     # Заголовок формы входа
 
-    email= (By.XPATH, "//label[normalize-space()='Email']/following::input[1]")  
+    email= (By.XPATH, "//label[text()='Email']/..//input")  
     # Поле ввода Email
 
-    password= (By.XPATH, "//label[normalize-space()='Пароль']/following::input[@type='password'][1]")  
+    password= (By.XPATH, "//label[text()='Пароль']/..//input")  
     # Поле ввода пароля
 
     butoon_log_in= (By.XPATH, "//button[normalize-space()='Войти']")  
@@ -42,13 +42,13 @@ class RegisterForm:
     register_form_title = (By.XPATH, "//h2[normalize-space()='Регистрация']")  
     # Заголовок формы регистрации
 
-    name= (By.XPATH, "//label[.='Имя']/following::input[1]")  
+    name= (By.XPATH, "//label[normalize-space()='Имя']/following-sibling::input")  
     # Поле "Имя"
 
-    email_in_register_form= (By.XPATH, "//label[.='Email']/following::input[1]")  
+    email_in_register_form= (By.XPATH, "//label[normalize-space()='Email']/following-sibling::input")  
     # Поле "Email"
 
-    password_in_register_form= (By.XPATH, "//label[.='Пароль']/following::input[1]")  
+    password_in_register_form= (By.XPATH, "//label[.='Пароль']/following::input")  
     # Поле "Пароль"
 
     button_to_register= (By.XPATH, "//button[normalize-space()='Зарегистрироваться']")  
@@ -64,7 +64,7 @@ class RegisterForm:
 # Форма восстановления пароля
 
 class ForgotForm:
-    title_fogot_form= (By.XPATH, "//*[contains(.,'Восстановление пароля')][self::h2 or self::p]")  
+    title_fogot_form= (By.XPATH, "//h2[normalize-space()='Восстановление пароля']")  
     # Заголовок "Восстановление пароля"
 
     to_log_in_link= (By.XPATH, "//a[normalize-space()='Войти']")  
@@ -75,7 +75,7 @@ class ForgotForm:
 
 class AccountPage:
     button_log_out= (By.XPATH, "//button[normalize-space()='Выход']")
-    # Кнопка "Выйти" в личном кабинете
+    # Кнопка "Выход" в личном кабинете
 
 
 # Раздел "Конструктор"

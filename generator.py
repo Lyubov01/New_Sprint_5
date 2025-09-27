@@ -14,4 +14,3 @@ def gen_password():
     return password
 
 email= gen_login ('lyubov', 'melnikova', 30)
-print(email)
